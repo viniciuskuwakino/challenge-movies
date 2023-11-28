@@ -91,9 +91,9 @@ Exemplo de GET:
 [
     {
         "id": 1,
-		"name": "A espera de um milagre",
-		"createdAt": "2023-11-27T04:38:31.553Z",
-		"updatedAt": "2023-11-27T04:38:31.553Z"
+        "name": "A espera de um milagre",
+        "createdAt": "2023-11-27T04:38:31.553Z",
+        "updatedAt": "2023-11-27T04:38:31.553Z"
     }
 ]
 ```
