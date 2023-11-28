@@ -36,3 +36,65 @@ Faça o deploy!
 ---------------
 
 Ao finalizar, faça o deploy no lugar que te for mais confortável (exemplo: Amazon EC2, Heroku, Netlify, Google AppEngine, etc)
+
+Modo de execução
+---------------
+
+Na raíz do projeto, execute o comando para iniciar o container do postgres:
+```
+docker-compose up -d
+```
+
+Em seguida, execute o comando a seguir para iniciar o projeto:
+```
+npm run start
+```
+
+A partir da url: http://localhost:3000, é possível acessar as rotas de usuarios e filmes.
+
+Exemplo de teste da API
+---------------
+
+Utilizando o postman, realize um POST na rota http://localhost:3000/users, da seguinte forma:
+```json
+{
+	"name": "Vinicius",
+	"email": "vinicius@gmail.com",
+	"password": "123mudar"
+}
+```
+
+Em seguida, realize o login através de um POST na rota http://localhost:3000/auth/login, passando um corpo em JSON:
+
+```json
+{
+	"email": "vinicius@gmail.com",
+	"password": "123mudar"
+}
+```
+
+Recebendo o token de acesso e nos headers da seguinte forma:
+
+> header: Authorization <br>
+> value: Bearer <access_token>
+
+Agora é possível utilizar a rota de filmes http://localhost:3000/movies.
+
+Exemplo de POST:
+```json
+{
+	"name": "A espera de um milagre"
+}
+```
+Exemplo de GET:
+```json
+[
+    {
+		"id": 1,
+		"name": "A espera de um milagre",
+		"createdAt": "2023-11-27T04:38:31.553Z",
+		"updatedAt": "2023-11-27T04:38:31.553Z"
+	}
+]
+```
+
